@@ -1,0 +1,23 @@
+# OS X
+.DS_Store
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+# Ignore all except for .java files
+build.xml
+manifest.mf
+build-impl.xml
+genfiles.properties
+private/private.properties
+project.properties
+project.xml
+*.properties
+private.xml
