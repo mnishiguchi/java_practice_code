@@ -4,6 +4,8 @@
  */
 package hw20150903_prob_1_4;
 
+import java.util.Scanner;
+
 /**
  * Prints a table of numbers raised to powers.
  * @author masa
@@ -15,17 +17,22 @@ public class Hw20150903_prob_1_4 {
      */
     public static void main(String[] args) {
         
-        // Number of rows
-        final int NUM_ROWS = 4;
-        
         // Standardize on five spaces
         final String SEP = "     ";
+        
+        // Create a scanner
+        Scanner sc = new Scanner(System.in);
+        
+        // Prompt the user to input the number of rows
+        System.out.print("Enter the number of rows: ");
+        int numRows = sc.nextInt();
            
         // Print the column names
+        System.out.println("");
         System.out.println("a    " + SEP + "a^2  " + SEP + "a^3  ");
 
         // Print the rows
-        for (int i = 1; i <= NUM_ROWS; i++) {
+        for (int i = 1; i <= numRows; i++) {
             System.out.println(addPadding(i)
                                 + SEP
                                 + addPadding(i * i)
