@@ -15,14 +15,17 @@ public class Hw20150903_prob_1_4 {
      */
     public static void main(String[] args) {
         
+        // Number of rows
+        final int NUM_ROWS = 4;
+        
         // Standardize on five spaces
         final String SEP = "     ";
-        
+           
         // Print the column names
         System.out.println("a    " + SEP + "a^2  " + SEP + "a^3  ");
 
         // Print the rows
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= NUM_ROWS; i++) {
             System.out.println(addPadding(i)
                                 + SEP
                                 + addPadding(i * i)

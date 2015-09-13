@@ -13,9 +13,9 @@
 
 |Relation    |Returns |Expression to detect|
 |---|---|---|
-|str1 |less-than str2   |Negative number     |str1.compareTo(str2) < 0|
-|str1 |equal-to str2    |0   |str1.compareTo(str2) == 0
-|str1 |greater-than str2    |Positive number     |str1.compareTo(str2) > 0|
+|str1 less-than str2    |Negative number |str1.compareTo(str2) < 0  |
+|str1 equal-to str2     |0               |str1.compareTo(str2) == 0 |
+|str1 greater-than str2 |Positive number |str1.compareTo(str2) > 0  |
 
 
 ## String access operations
@@ -62,44 +62,109 @@ str1 += str2
 
 ## Character operations
 
-isLetter(c)
+Character.isLetter(c)
 - true if alphabetic: a-z or A-Z
 ```java
-isLetter('x') // true
-isLetter('6') // false
-isLetter('!') // false
+Character.isLetter('x') // true
+Character.isLetter('6') // false
+Character.isLetter('!') // false
 ```
 
-isDigit(c)
+Character.isDigit(c)
 - true if digit: 0-9
 ```java
-isDigit('x') // false
-isDigit('6') // true
+Character.isDigit('x') // false
+Character.isDigit('6') // true
 ```
 
 
-isWhitespace(c)
+Character.isWhitespace(c)
 - true if whitespace
 ```java
-isWhitespace(' ')  // true
-isWhitespace('\n') // true
-isWhitespace('x')  // false
+Character.isWhitespace(' ')  // true
+Character.isWhitespace('\n') // true
+Character.isWhitespace('x')  // false
 ```
 
-toUpperCase(c) 
+Character.toUpperCase(c) 
 ```java
-toUpperCase('a')  // A
-toUpperCase('A')  // A
-toUpperCase('3')  // 3
+Character.toUpperCase('a')  // A
+Character.toUpperCase('A')  // A
+Character.toUpperCase('3')  // 3
 ```
 
-toLowerCase(c)
+Character.toLowerCase(c)
 ```java
-toLowerCase('A')  // a
-toLowerCase('a')  // a
-toLowerCase('3')  // 3
+Character.toLowerCase('A')  // a
+Character.toLowerCase('a')  // a
+Character.toLowerCase('3')  // 3
 ```
 
+==
+
+## Floating-point comparison
+
+- should not be compared using `==`
+- set a threshould(e.g. 0.0001)
+- `Math.abs()` computes floating-point absolute value
+
+```java
+// Determine if double variable x is 98.6.
+Math.abs(x - 98.6) < 0.0001;
+```
+
+```java
+// Determine if double variables x and y are equal. Threshold is 0.0001.
+// (If difference is less than 0.0001, values are close enough.)
+Math.abs(x - y) < 0.0001;
+```
+
+==
+
+## Basic input
+
+- `import java.util.Scanner;`
+- [doc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)
+
+```java
+import java.util.Scanner; // Enables user input
+
+public class Salary {
+   public static void main(String [] args) {
+      int hourlyWage   = 0;
+      int annualSalary = 0;
+
+      // Setup to scan chars from System.in
+      Scanner sc = new Scanner(System.in);
+
+      System.out.println("Enter hourly wage: ");
+
+      // Read next integer from scanner
+      hourlyWage = sc.nextInt();
+
+      annualSalary = hourlyWage * 40 * 50;
+      System.out.println("Salary is " + annualSalary);
+
+      return;
+   }
+}
+```
+
+==
+
+## Reading a single character
+
+- The Scanner does not directly support reading a single character.
+1. read a string from the user input using `usrInput = sc.next();`
+2. get the first character using `usrInput.charAt(0);`
+
+```java
+Scanner sc = new Scanner(System.in);
+usrInput = sc.next();
+userChar = usrInput.charAt(0); // Get the first char in the String
+```
+
+==
 
 
 
