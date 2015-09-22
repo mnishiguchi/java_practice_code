@@ -3,38 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package feetintometers;
+
+package _03_feet_to_meters;
 
 import java.util.Scanner;
 
 /**
  * Reads a number in feet, converts it to meters, and displays the result.
- * One foot is 0.305 meter. 
+ * One foot is 0.305 meter.
  * 
  * @author Masatoshi Nishiguchi
  */
-public class FeetIntoMeters {
+public class _03_feet_to_meters {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         // Prepare the scanner
         Scanner sc = new Scanner(System.in);
         
-        // Constant
-        final double FOOT_TO_METERS = 0.305;
-            
-        // Input
+        // Reads a number in feet
         System.out.print("Enter a value for feet: ");
-        double feetAmount = sc.nextDouble();
-
-        // Processing
-        double meterAmount = feetAmount * FOOT_TO_METERS;
+        double valueFeet = sc.nextDouble();
+        
+        // Converts it to meters
+        double valueMeters = valueFeet * 0.305;
         
         // Output
-        System.out.println(feetAmount + " feet is " + meterAmount + " meters");
+        System.out.printf("%.3f feet is %.3f meters%n", valueFeet, valueMeters);
     }
-    
 }
