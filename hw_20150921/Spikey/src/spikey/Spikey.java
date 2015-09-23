@@ -13,7 +13,7 @@ package spikey;
  * \\\///
  * ///\\\
  * //\\
- * /\ 
+ * /\
  * @author Masatoshi Nishiguchi
  */
 public class Spikey {
@@ -29,30 +29,19 @@ public class Spikey {
 //        System.out.println("///\\\\\\");
 //        System.out.println("//\\\\");
 //        System.out.println("/\\ ");
-        
-        int counter;
-        
-        for (int i = 1; i <= 3; i++) {
 
-            for (counter = 0; counter < i ; counter++) {
-                System.out.print("\\");
-            }
-            for (counter = 0; counter < i ; counter++) {
-                System.out.print("/");
-            }
+        int counter;
+
+        for (int i = 1; i <= 3; i++) {
+            for (counter = 0; counter < i ; counter++) { System.out.print("\\"); }
+            for (counter = 0; counter < i ; counter++) { System.out.print("/"); }
             System.out.println();
         }
-        
+
         for (int i = 3; i >= 1; i--) {
-            
-            for (counter = 0; counter < i ; counter++) {
-                System.out.print("/");
-            }
-            for (counter = 0; counter < i ; counter++) {
-                System.out.print("\\");
-            }
+            for (counter = 0; counter < i ; counter++) { System.out.print("/"); }
+            for (counter = 0; counter < i ; counter++) { System.out.print("\\"); }
             System.out.println();
         }
     }
-
 }
