@@ -29,9 +29,9 @@ public class _06_sum_digits {
         int number = sc.nextInt();
         
         // Adds all the digits in the integer
-        int remainder = number;
+        int remainder;
         
-        int hundreds = remainder / 100;
+        int hundreds = number / 100;
         remainder    = number % 100;
         
         int tens  = remainder / 10;

@@ -28,14 +28,14 @@ public class _08_time_zone_offset_to_GMT {
         int offsetToGMT = sc.nextInt();
         
         // Output
-        ShowCurrentTime(offsetToGMT);
+        showCurrentTime(offsetToGMT);
     }
     
     /**
      * Displays the time in the specified time zone
      * @param offsetToGMT the time zone offset to GMT
      */
-    public static void ShowCurrentTime(int offsetToGMT) {
+    public static void showCurrentTime(int offsetToGMT) {
         // Obtain the total milliseconds since midnight, Jan 1, 1970
         long totalMilliseconds = System.currentTimeMillis();
         
@@ -52,7 +52,7 @@ public class _08_time_zone_offset_to_GMT {
         long currentMinute = totalMinutes % 60;
         
         // Obtain the total hours
-        long totalHours = (totalMinutes / 60);
+        long totalHours = totalMinutes / 60;
         
         // Compute the current hour
         long currentHour = totalHours % 24;
