@@ -31,18 +31,18 @@ public class ChineseZodiac {
     private static String getZodiacSign(int year) {
         String s = "";
         switch (year % 12) {
-            case 0: s = "monkey"; break;
-            case 1: s = "rooster"; break;
-            case 2: s = "dog"; break;
-            case 3: s = "pig"; break;                
-            case 4: s = "rat"; break;
-            case 5: s = "ox"; break;          
-            case 6: s = "tiger"; break;
-            case 7: s = "rabbit"; break;
-            case 8: s = "dragon"; break;
-            case 9: s = "snake"; break;
-            case 10: s = "horse"; break;
-            case 11: s = "sheep"; break;
+            case 0: s = "Monkey"; break;
+            case 1: s = "Rooster"; break;
+            case 2: s = "Dog"; break;
+            case 3: s = "Pig"; break;                
+            case 4: s = "Rat"; break;
+            case 5: s = "Ox"; break;          
+            case 6: s = "Tiger"; break;
+            case 7: s = "Rabbit"; break;
+            case 8: s = "Dragon"; break;
+            case 9: s = "Snake"; break;
+            case 10: s = "Horse"; break;
+            case 11: s = "Sheep"; break;
         } 
         return s;
     }
