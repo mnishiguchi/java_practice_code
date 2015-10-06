@@ -21,3 +21,5 @@ project.properties
 project.xml
 *.properties
 private.xml
+/chap3_programming_exercises/ScissorRockPaper/nbproject/private/
+/chap3_programming_exercises/_17_ScissorRockPaper/nbproject/private/

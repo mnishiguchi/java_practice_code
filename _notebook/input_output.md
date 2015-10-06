@@ -44,3 +44,14 @@ userChar = usrInput.charAt(0); // Get the first char in the String
 ```
 
 ==
+
+## Input validation
+
+```java
+// Ensure that the input is an integer
+while (!sc.hasNextInt()) {
+    System.out.println("   Invalid input");
+
+    sc.next();  // Clear the input stream
+}
+```

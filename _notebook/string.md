@@ -101,3 +101,12 @@ Character.toLowerCase('3')  // 3
 
 ## Converting a boolean value to a string
 - Use `String.valueOf()`
+
+## Splitting a sentence into words
+- `str.split("\\s+")`
+
+```java
+String data    = scanner.nextLine();
+String[] words = data.split("\\s+");
+
+```
