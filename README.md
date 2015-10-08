@@ -1,9 +1,8 @@
 # java_practice_code
-==
 
 ## Simple timer
 
-``java
+```java
 // Record a start time
 long start = System.currentTimeMillis();
 

@@ -20,7 +20,6 @@ A = P(1 + r/n)^nt
 where
     A = Accrued Amount (principal + interest)
     P = Principal Amount
-    I = Interest Amount
     r = Annual Nominal Interest Rate as a decimal (percentage/100)
     t = Time Involved in years (e.g., 0.5 years => 6 months, etc.)
     n = number of compounding periods per unit t
