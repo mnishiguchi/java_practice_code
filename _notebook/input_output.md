@@ -1,6 +1,6 @@
 # Input Output
 
-## Basic input
+## Basic input using Scanner
 
 - `import java.util.Scanner;`
 - [doc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)

@@ -1,6 +1,6 @@
 package _24_pickcard;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  * Simulates picking a card from a deck of 52 cards.
@@ -15,13 +15,25 @@ public class _24_PickCard {
      */
     public static void main(String[] args) {
 
-        // Prepare the scanner
-        Scanner sc = new Scanner(System.in);
-
         // Input
-        System.out.print("How many cards do you want: ");
-        int num = sc.nextInt();
+        
+        int num = 0;
 
+        boolean inputAccepted = false;
+        while(!inputAccepted) {
+          String input = JOptionPane.showInputDialog("How many cards do you want: ");
+
+          if (input == null || input.isEmpty() || !input.matches("[A-Za-z]*")) {
+            num = Integer.parseInt(input);
+            inputAccepted = true;
+
+          } else {
+            JOptionPane.showMessageDialog(null, "Please enter only numbers");
+          }
+        }
+        
+        // Output
+        
         for (int i = 0; i < num; i++) {
             // random number between 1..13
             int rankCode = (int) (1 + Math.random() * (13 - 1 + 1));
