@@ -84,6 +84,8 @@ round(x)
 ==
 
 ## The Trig methods
+- **Convert the degrees into radians** using the `Math.toRadians` method since the Java trigonometric methods use radians. 
+
 sin(radians)
 - Returns the trigonometric sine of an angle in radians.
 
