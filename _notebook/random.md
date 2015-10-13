@@ -33,18 +33,20 @@ int randomNumber  = (int)(MIN + randomOffset);
 ```
 
 ### Math.random
-- Returns a random double value between 0.0 and 1.0, excluding 1.0.
+- Returns a random **double value** between 0.0 and 1.0, excluding 1.0.
+- **0 <= Math.random() < 1.0**
+- can write a simple expression to generate random numbers in any range.
 - [doc](http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html#random())
 
 ```java
-// Generating two random single-digit integers (0..9)
-int number1 = (int)(Math.random() * 10);
-int number2 = (int)(Math.random() * 10);
+int number1 = (int)(Math.random() * 10);      // random integers (0..9)
+int number2 = 50 + (int)(Math.random() * 50); // random integers (50..99)
 ```
 
 ```java
 // Generating random integers in a range (min..max)
-int range = (MAX - MIN) + 1;
+int range = (MAX - MIN) + 1;  // +1 is for including MAX value
+
 // 0 <= randomOffset < range
 int randomOffset = (int)(Math.random() * range);
 int randomNumber = MIN + randomOffset;

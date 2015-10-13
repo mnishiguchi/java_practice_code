@@ -31,6 +31,17 @@ public class Salary {
 
 ==
 
+## sc.next() vs sc.nextLine()
+
+### The next() method
+- reads a string that ends with a whitespace character
+
+### the nextLine() method
+- reads an entire line of text
+- reads a string that ends with the Enter key pressed
+
+==
+
 ## Reading a single character
 
 - The Scanner does not directly support reading a single character.

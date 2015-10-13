@@ -63,3 +63,52 @@ Math.abs(x - y) < 0.0001;
     }
 ```
 
+==
+
+## The Rounding Methods
+
+ceil(x)
+- x is **rounded up** to its nearest integer. This integer is returned as a double value.
+
+floor(x)
+- x is **rounded down** to its nearest integer. This integer is returned as a double value.
+
+rint(x)
+- x is **rounded up to its nearest integer**.
+- Note: If x is equally close to two integers, the even one is returned as a double value.
+
+round(x)
+- Returns (int)Math.floor(x + 0.5) if x is a float.
+- Returns (long)Math.floor(x + 0.5) if x is a double.
+
+==
+
+## The Trig methods
+sin(radians)
+- Returns the trigonometric sine of an angle in radians.
+
+cos(radians)
+- Returns the trigonometric cosine of an angle in radians.
+
+tan(radians)
+- Returns the trigonometric tangent of an angle in radians.
+
+toRadians(degree)
+- Returns the angle in radians for the angle in degree.
+
+toDegree(radians)
+- Returns the angle in degrees for the angle in radians.
+
+asin(a)
+- Returns the arc sine of a value
+- Returns the angle in radians for the inverse of sine.
+
+acos(a)
+- Returns the arc cosine of a value
+- Returns the angle in radians for the inverse of cosine.
+
+atan(a)
+- Returns the arc tangent of a value
+- Returns the angle in radians for the inverse of tangent.
+
+
