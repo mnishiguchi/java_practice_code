@@ -21,8 +21,3 @@ project.properties
 project.xml
 *.properties
 private.xml
-/chap3_programming_exercises/SortThreeIntegers/nbproject/private/
-/chap4_programming_exercises/_01_AreaPentagon/nbproject/private/
-/chap4_programming_exercises/_02_GreatCircleDistance/nbproject/private/
-/chap4_programming_exercises/_05_AreaRegularPolygon/nbproject/private/
-/chap4_programming_exercises/_08_FindAsciiCharacter/nbproject/private/
