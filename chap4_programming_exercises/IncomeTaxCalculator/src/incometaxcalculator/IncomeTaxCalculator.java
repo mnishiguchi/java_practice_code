@@ -70,23 +70,19 @@ public class IncomeTaxCalculator {
         // Compute tax
         double tax = 0;
 
-        // Compute tax for single filers
         if (status == 0) {
             tax = calcIncomeTaxForSingleFiler(income);
-        }
-        // Compute tax for married file jointly
-        else if (status == 1) {
+
+        } else if (status == 1) {
             tax = calcIncomeTaxForMarriedJointly(income);
-        }
-        // Compute tax for married separately
-        else if (status == 2) {
+
+        } else if (status == 2) {
             tax = calcIncomeTaxForMarriedSeparately(income);
-        }
-        // Compute tax for head of household
-        else if (status == 3) {
+
+        } else if (status == 3) {
             tax = calcIncomeTaxForHeadOfHousehould(income);
-        }
-        else {
+
+        } else {
             System.out.println("Error: invalid status");
         }
 
