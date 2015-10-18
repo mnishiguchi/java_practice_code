@@ -1,24 +1,31 @@
 # java_practice_code
 
-## Simple timer
+## Primitive data types
+- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
+### Assignment to float
 ```java
-// Record a start time
-long start = System.currentTimeMillis();
+// incompatible types: possible lossy conversion from double to float
+float length = 34.0;  // NG
 
-// Set a end time
-long end = start + 10 * 1000; // 10 seconds * 1000 ms/sec
+float length = 34.0f; // Good
+float length = 34;    // Good
+float length = -34;   // Good
 
-int input;
-for(;;) {
-    // Check time
-    if (System.currentTimeMillis() > end) {
-        System.out.println("   Time to go, i'm tired...");
-        break;
-    }
-    //...
+double length = 34.0  // Good
 ```
 
+### Type casting
+- Widening or Automatic type converion
+- Narrowing or Explicit type conversion
+- http://www.studytonight.com/java/type-casting-in-java
 
+==
+
+## Modulo
+- Be careful when dealing with negative numbers!
+```java
+System.out.println(" -24 % -5 = " +  -24 % -5);  // -24 % -5 = -4
+```
 
 
