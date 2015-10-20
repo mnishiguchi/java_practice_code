@@ -28,4 +28,13 @@ double length = 34.0  // Good
 System.out.println(" -24 % -5 = " +  -24 % -5);  // -24 % -5 = -4
 ```
 
+==
 
+## Number format
+- import java.text.DecimalFormat;
+- http://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html
+
+```java
+// Create a DecimalFormat object to format output.    
+DecimalFormat dollar = new DecimalFormat("#,##0.00");
+```

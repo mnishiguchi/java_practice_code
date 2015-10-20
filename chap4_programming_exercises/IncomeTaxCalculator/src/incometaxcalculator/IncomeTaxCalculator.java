@@ -20,8 +20,8 @@ Taxable income computation
 Income tax computation
     Refer to the Federal income tax brackets
 
-Example case - Single Woman with no dependents:
-    Gross income: $62,000
+Example case - a married person seperate:
+    Gross income: $73,000
     Adjustments:  $4,000
     Tax credit:   $500
 
@@ -31,16 +31,16 @@ Example case - Single Woman with no dependents:
        $2,400: charitable contributions
 
     Adjusted gross income = Gross income – Adjustments
-                          = $62,000 - $4000
-                          = $58,000
+                          = $73,000 - $4000
+                          = $69,000
 
     Taxable income = Adjusted gross income – (Exemptions + Deductions)
-                   = $58,000 – ($3,500 + $12,100)
-                   = $58,000 – $15,600
-                   = $42,400
+                   = $69,000 – ($3,500 + $12,100)
+                   = $69,000 – $15,600
+                   = $53,400
 
-    Tax computation = (9,225 * 0.10) + ((37,450 - 9,225) * 0.15) + ((42,400 - 37,450) * 0.25)
-                    = 6393.75
+    Tax computation = (9,225 * 0.10) + ((37,450 - 9,225) * 0.15) + ((53,400 - 37,450) * 0.25)
+                    = 9,143.75
 
     Income tax = Tax computation – Tax credits
 */
@@ -299,8 +299,9 @@ run:
 2: married separately
 3: head of household
 
-Enter your filing status: 0
-Enter the taxable income: 42400
-Tax is 6393.75
-BUILD SUCCESSFUL (total time: 7 seconds)
+Enter your filing status: 2
+Enter the taxable income: 53400
+Tax is 9143.75
+BUILD SUCCESSFUL (total time: 19 seconds)
+
 */
