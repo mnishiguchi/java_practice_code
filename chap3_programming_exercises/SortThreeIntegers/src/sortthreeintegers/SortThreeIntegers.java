@@ -12,51 +12,35 @@ public class SortThreeIntegers {
      */
     public static void main(String[] args) {
 
-        // Prepare the scanner
         Scanner sc = new Scanner(System.in);
-        
-        final int NUM_INT = 3;
-        int[] nums = new int[NUM_INT];
-        
+
+        final int SIZE = 3;
+        double[] nums = new double[SIZE];
+        double min, mid, max;
+
         // Input
         System.out.print("Enter three numbers: ");
-        for (int i = 0; i < NUM_INT; i++) {
+        for (int i = 0; i < SIZE; i++) {
              nums[i] = sc.nextInt();
         }
-        
-        // Sorting
-        int first, second, third;
-        
-        // the smallest
-        if (nums[0] <= nums[1] && nums[0] <=  nums[2]) {
-            first = nums[0];
-        } else if (nums[1] <=  nums[0] && nums[1] <=  nums[2]) {
-            first = nums[1];
-        } else {
-            first = nums[2];
-        }
-        
-        // the greatest
-        if (nums[0] >= nums[1] && nums[0] >=  nums[2]) {
-            third = nums[0];
-        } else if (nums[1] >=  nums[0] && nums[1] >=  nums[2]) {
-            third = nums[1];
-        } else {
-            third = nums[2];
-        }       
-        
-        // middle
-        second = Integer.MAX_VALUE;
-        for (int i = 0; i < NUM_INT; i++) {
-            if (nums[i] != first && nums[i] != third) {
-                second = nums[i];
-                break;
+
+        // Find the smallest and the greatest
+        min = Math.min( nums[0], Math.min(nums[1], nums[2]) );
+        max = Math.max( nums[0], Math.max(nums[1], nums[2]) );
+
+        // Find the number in the middle
+        mid = Integer.MAX_VALUE;
+        boolean found = false;
+        for (int i = 0; i < SIZE && !found; i++) {
+            if (nums[i] != min && nums[i] != max) {
+                mid   = nums[i];
+                found = true;
             }
         }
-      
-        // output
-        System.out.printf("first:  %d%n", first);
-        System.out.printf("second: %d%n", second);
-        System.out.printf("third:  %d%n", third);
+
+        // Output
+        System.out.printf("min: %.2f%n", min);
+        System.out.printf("mid: %.2f%n", mid);
+        System.out.printf("max: %.2f%n", max);
     }
 }
