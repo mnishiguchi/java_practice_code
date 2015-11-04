@@ -29,20 +29,16 @@ public class Salary {
 }
 ```
 
-==
+### sc.next() vs sc.nextLine()
 
-## sc.next() vs sc.nextLine()
-
-### The next() method
+**The next() method**
 - reads a string that ends with a whitespace character
 
-### the nextLine() method
+**the nextLine() method**
 - reads an entire line of text
 - reads a string that ends with the Enter key pressed
 
-==
-
-## Reading a single character
+### Reading a single character
 
 - The Scanner does not directly support reading a single character.
 1. read a string from the user input using `usrInput = sc.next();`
@@ -54,9 +50,19 @@ usrInput = sc.next();
 userChar = usrInput.charAt(0); // Get the first char in the String
 ```
 
-==
+```java
+Scanner sc = new Scanner(System.in);
+//...
+while (true) {
+    String line = sc.nextLine();         // Read the user's input
+    if (line.length() > 0) {             // Reject empty strings
+        menuSelection = line.charAt(0);  // Get the first char in the String
+        break;
+    }
+}
+```
 
-## Input validation
+### Input validation
 
 ```java
 // Ensure that the input is an integer
@@ -69,6 +75,26 @@ while (!sc.hasNextInt()) {
 
 ==
 
+## InputStream and System.in
+- [Oracle's Java tutorials on I/O Streams](http://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+- [Oracle's InputStream class specification](http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html)
+
+### System.in
+- A predefined input stream object reference that is associated with a system's standard input, which is usually a keyboard
+- The System class is a predefined class and does **not require an import statement**
+- Reads bytes from a memory region initialized by the operating system
+- Is an **input byte stream**
+- `System.in.read()` reads the **first 8-bit ASCII value** available from the operating system's buffer
+- Each 8-bit value read from the input stream is returned as an int (instead of byte)
+- If data is no longer available, that is indicated by a return value of -1.
+
+### throws IOException
+- When using an InputStream, a programmer must append the clause `throws IOException` to the definition of main()
+- A throws clause tells the JVM that the corresponding method may exit unexpectedly due to an exception, which is an event that disrupts a program's execution
+- a program typically uses the `Scanner` class as a wrapper that augments `System.in` by automatically scanning a sequence of bytes and converting those bytes to the desired data type
+
+==
+
 ## OutputStream and System.out
 - [Class OutputStream](http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html)
 - [Class PrintStream](http://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html)
@@ -78,8 +104,8 @@ while (!sc.hasNextInt()) {
 - provides several overloaded methods for writing a sequence of bytes to a destination. That sequence is normally placed into a buffer, and the system then outputs the buffer at various times.
 
 ### System.out
--  a predefined output stream object reference that is associated with a system's standard output, usually a computer screen
--  a reference derived from OutputStream called a PrintStream
+- A predefined output stream object reference that is associated with a system's standard output, usually a computer screen
+- A reference derived from OutputStream called a PrintStream
 - The System class is predefined and does **not require an import statement**.
 
 ### The PrintStream class
@@ -88,15 +114,10 @@ while (!sc.hasNextInt()) {
 
 ### The print() and println() methods
 - **overloaded to support the various standard data types**, such as int, boolean, float, etc., each method converting that data type to a sequence of characters
-- When a programmer invokes either printing method with an argument of a reference type, the method **prints a string representation of the object**.
+- When a programmer invokes either printing method with an argument of a reference type, the method **prints a string representation of the object**
 
 ### The string representation of the object
 - class_name@hex_value_of_object_hash_code
 - A hash code typically represents the object's address in memory
 
-==
-
-## InputStream and System.in
-
-###
 

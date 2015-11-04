@@ -52,6 +52,14 @@ int randomOffset = (int)(Math.random() * range);
 int randomNumber = MIN + randomOffset;
 ```
 
+```java
+private static int getRandomInt(int min, int max) {
+    return min + (int)( Math.random() * (max - min + 1) );
+}
+```
+
+
+
 ### ThreadLocalRandom.current()
 - In Java 1.7 or later
 

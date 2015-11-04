@@ -21,3 +21,5 @@ project.properties
 project.xml
 *.properties
 private.xml
+/chap5_programming_exercises/JavaApplication111/nbproject/private/
+/chap5_programming_exercises/MathTutor/nbproject/private/

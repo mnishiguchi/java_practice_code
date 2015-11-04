@@ -38,3 +38,23 @@ System.out.println(" -24 % -5 = " +  -24 % -5);  // -24 % -5 = -4
 // Create a DecimalFormat object to format output.    
 DecimalFormat dollar = new DecimalFormat("#,##0.00");
 ```
+
+==
+
+## Precedence
+- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+- http://introcs.cs.princeton.edu/java/11precedence/
+
+==
+
+## Misc ideas
+
+```java
+private static void drawSeparator() {
+    System.out.println();  // Insert a new line
+    for (int i = 0; i < 48; i++) {
+        System.out.print("~");
+    }
+    System.out.println();  // Insert a new line
+}
+```
