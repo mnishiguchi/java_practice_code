@@ -55,7 +55,7 @@ public class AmortizationProgram {
                                                       numMonths);
         printTableHeader();
 
-        for(month = 1; month <= numMonths; month++){
+        for (month = 1; month <= numMonths; month++) {
             interestPaid  = principal      * interestRateMonthly;
             principalPaid = monthlyPayment - interestPaid;
             newBalance    = Math.max(0, principal - principalPaid);
