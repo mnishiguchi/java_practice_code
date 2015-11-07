@@ -20,6 +20,36 @@ import java.util.Scanner;
 
 /* ANALYSIS
 
+Formulas
+
+    monthlyRate    = annualInterestRate / 12 / 100
+    monthlyPayment = loanAmount * monthlyInterestRate /
+                    ( 1 - 1 / (1 + monthlyInterestRate)^(numberOfYears * 12) )
+    totalPayment   = monthlyPayment * numYears * 12
+    interestPaid   = principal      * monthlyInterestRate
+    principalPaid  = monthlyPayment - interestPaid
+    newBalance     = principal      - principalPaid
+
+Calculation
+
+    If the loan amount: 10000, duration: 1 year, and annual interest rate: 7%,
+
+        monthlyRate    = 7 / 12 / 100 = 0.0058333
+        monthlyPayment = 10000 * 0.0058333 / ( 1 - 1 / (1 + 0.0058333)^(1 * 12) ) = 865.267
+        totalPayment   = 865.26 * 1 * 12 = 10383.20
+    Month 1
+        interestPaid   = 10000 * 0.0058333 = 58.33
+        principalPaid  = 865.26 - 58.33 = 806.93
+        newBalance     = 10000 - 806.93 = 9193.07
+    Month 2
+        interestPaid   = 9193.07 * 0.0058333 = 53.63
+        principalPaid  = 865.26 - 53.63 = 811.64
+        newBalance     = 9193.07 - 811.64 = 8381.42
+    Month 3
+        interestPaid   = 8381.42 * 0.0058333 = 48.89
+        principalPaid  = 865.26 - 48.89 = 816.38
+        newBalance     = 8381.42 - 816.38 = 7565.05
+    ...
 */
 
 /* OUTPUT
@@ -51,11 +81,11 @@ import java.util.Scanner;
     BUILD SUCCESSFUL (total time: 6 seconds)
 */
 
+
+
+
 public class _22_LoanAmortizationSchedule {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -80,35 +110,33 @@ public class _22_LoanAmortizationSchedule {
 
     /**
      * Prints amortization schedule for all months.
-     * @param principal          - the total amount of the loan
-     * @param annualInterestRate - nominal interest rate in percent
+     * @param principal - the total amount of the loan
+     * @param annualInterestRate in percent
      * @param numYears
      */
-    public static void printAmortizationSchedule(double principal,
-                                                  double annualInterestRate,
-                                                  int numYears) {
+    public static void printAmortizationSchedule(double principal, double annualInterestRate,
+                                                 int numYears) {
         double interestPaid, principalPaid, newBalance;
+        double monthlyInterestRate, monthlyPayment;
         int month;
         int numMonths = numYears * 12;
 
         // Output monthly payment and total payment
-
-        double monthlyInterestRate = (annualInterestRate / 12) / 100;  // e.g. 7% => 0.007
-        double monthlyPayment      = monthlyPayment(principal,
-                                                    monthlyInterestRate,
-                                                    numYears);
+        monthlyInterestRate = annualInterestRate / 12;
+        monthlyPayment      = monthlyPayment(principal, monthlyInterestRate, numYears);
         System.out.format("Monthly Payment: %8.2f%n", monthlyPayment);
         System.out.format("Total Payment:   %8.2f%n", monthlyPayment * numYears * 12);
 
-        // Output the schedule
-
+        // Print the table header
         printTableHeader();
 
         for (month = 1; month <= numMonths; month++) {
-            interestPaid  = principal      * monthlyInterestRate;
+            // Compute amount paid and new balance for each payment period
+            interestPaid  = principal      * (monthlyInterestRate / 100);
             principalPaid = monthlyPayment - interestPaid;
             newBalance    = principal      - principalPaid;
 
+            // Output the data item
             printScheduleItem(month, interestPaid, principalPaid, newBalance);
 
             // Update the balance
@@ -117,25 +145,22 @@ public class _22_LoanAmortizationSchedule {
     }
 
     /**
-     * @param principal           - the total amount of the loan
-     * @param monthlyInterestRate - monthly interest rate in percent
-     * @param numYears
-     * @return the monthly payment
+     * @param loanAmount
+     * @param monthlyInterestRate in percent
+     * @param numberOfYears
+     * @return the amount of the monthly payment of the loan
      */
-    public static double monthlyPayment(double principal,
-                                        double monthlyInterestRate,
-                                        int numYears) {
-        return principal * monthlyInterestRate /
-            ( 1 - 1 / Math.pow(1 + monthlyInterestRate, numYears * 12) );
+    static double monthlyPayment(double loanAmount, double monthlyInterestRate, int numberOfYears) {
+        monthlyInterestRate /= 100;  // e.g. 5% => 0.05
+        return loanAmount * monthlyInterestRate /
+                ( 1 - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12) );
     }
 
     /**
      * Prints a table data of the amortization schedule as a table row.
      */
-    private static void printScheduleItem(int month,
-                                          double interestPaid,
-                                          double principalPaid,
-                                          double newBalance) {
+    private static void printScheduleItem(int month, double interestPaid,
+                                          double principalPaid, double newBalance) {
         System.out.format("%8d%10.2f%10.2f%12.2f\n",
             month, interestPaid, principalPaid, newBalance);
     }
@@ -154,3 +179,6 @@ public class _22_LoanAmortizationSchedule {
             "", "paid", "paid", "");
     }
 }
+
+
+

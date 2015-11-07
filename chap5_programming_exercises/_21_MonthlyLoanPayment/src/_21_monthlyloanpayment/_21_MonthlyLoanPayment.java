@@ -3,30 +3,30 @@ package _21_monthlyloanpayment;
 import java.util.Scanner;
 
 /**
- * Lets the user enter the loan amount and loan period in number of years and
- * displays the monthly and total payments for each interest rate
- * starting from 5% to 8%, with an increment of 1/8.
- * @author Masatoshi Nishiguchi
+ *  MonthlyLoanPayment.java
+ *  @author Masatoshi Nishiguchi
+ *  11/05/2015
+ *
+ *  Lets the user enter the loan amount and loan period in number of years and
+ *  displays the monthly and total payments for each interest rate
+ *  starting from 5% to 8%, with an increment of 1/8.
  */
 
 /* ANALYSIS
 
-Computing monthly interest rate
-    annualInterestRate / 12 / 100
+Formulas
 
-Computing monthly payment
-    loanAmount * monthlyInterestRate /
-                ( 1 - 1 / (1 + monthlyInterestRate)^(numberOfYears * 12) )
+    monthlyRate    = annualInterestRate / 12 / 100
+    monthlyPayment = loanAmount * monthlyInterestRate /
+                    ( 1 - 1 / (1 + monthlyInterestRate)^(numberOfYears * 12) )
+    totalPayment   = monthlyPayment * numYears * 12
 
-Computing total payment
-    monthlyPayment * numYears * 12;
+Calculation
 
-If loan amount is 10000, duration is 1 year and annual interest rate is 5%,
-    monthly rate    = 5 / 12 / 100
-                    = 0.0041666
-    monthly payment = 10000 * 0.0041666 / ( 1 - 1 / (1 + 0.0041666)^(1 * 12) )
-                    = 856.074
-    total payment   = 856.074 * 1 * 12 = 10272.888
+    If loan amount is 10000, duration is 1 year and annual interest rate is 5%,
+        monthly rate    = 5 / 12 / 100 = 0.0041666
+        monthly payment = 10000 * 0.0041666 / ( 1 - 1 / (1 + 0.0041666)^(1 * 12) ) = 856.074
+        total payment   = 856.074 * 1 * 12 = 10272.888
 */
 
 /* OUTPUT
