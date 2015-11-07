@@ -18,7 +18,11 @@ import java.util.Scanner;
  *  - principal paid for the month: monthly payment - the monthly interest.
  */
 
-/* Actual output
+/* ANALYSIS
+
+*/
+
+/* OUTPUT
     run:
     Loan Amount: 10000
     Number of Years: 1
