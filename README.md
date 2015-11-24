@@ -39,6 +39,15 @@ System.out.println(" -24 % -5 = " +  -24 % -5);  // -24 % -5 = -4
 DecimalFormat dollar = new DecimalFormat("#,##0.00");
 ```
 
+```java
+String pattern = "###,###.###";
+DecimalFormat decimalFormat = new DecimalFormat( pattern );
+double number = 123456789.123;
+
+String formatted = decimalFormat.format( number );
+System.out.println( formatted );
+```
+
 ==
 
 ## Precedence
@@ -50,11 +59,39 @@ DecimalFormat dollar = new DecimalFormat("#,##0.00");
 ## Misc ideas
 
 ```java
-private static void drawSeparator() {
-    System.out.println();  // Insert a new line
-    for (int i = 0; i < 48; i++) {
-        System.out.print("~");
+    private static void drawSeparator() {
+        System.out.println();  // Insert a new line
+        for (int i = 0; i < 48; i++) {
+            System.out.print("~");
+        }
+        System.out.println();  // Insert a new line
     }
-    System.out.println();  // Insert a new line
-}
+```
+
+```java
+    /**
+     * Prompts the user for a double data.
+     * @param A Scanner object.
+     * @param A message for the prompt.
+     * @return data of double type.
+     */
+    public static double propmtUserDouble(Scanner sc, String msg) {
+
+        double data;
+
+        // Print the prompt message.
+        System.out.print(msg);
+
+        // Validate the input.
+        while (!sc.hasNextDouble()) {
+            System.out.println("  Invalid input. Try again.");
+            System.out.print("  >>> ");
+            sc.next();  // Clear the input stream
+        }
+
+        // Read the input.
+        data = sc.nextDouble();
+
+        return data;
+    }
 ```

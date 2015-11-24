@@ -29,6 +29,35 @@ public class Salary {
 }
 ```
 
+```java
+    /**
+     * Prompts the user for a double data.
+     * @param A Scanner object.
+     * @param A message for the prompt.
+     * @return data of double type.
+     */
+    public static double propmtUserDouble(Scanner sc, String msg) {
+
+        double data;
+
+        // Print the prompt message.
+        System.out.print(msg);
+
+        // Validate the input.
+        while (!sc.hasNextDouble()) {
+            System.out.println("  Invalid input. Try again.");
+            System.out.print("  >>> ");
+            sc.next();  // Clear the input stream
+        }
+
+        // Read the input.
+        data = sc.nextDouble();
+
+        return data;
+    }
+```
+
+
 ### sc.next() vs sc.nextLine()
 
 **The next() method**
