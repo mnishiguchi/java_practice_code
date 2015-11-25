@@ -21,3 +21,4 @@ project.properties
 project.xml
 *.properties
 private.xml
+/chap6_programming_exercises/DistConvert/nbproject/private/
