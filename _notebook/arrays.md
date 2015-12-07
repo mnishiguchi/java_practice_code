@@ -1,9 +1,46 @@
 # arrays
+- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
+- For a parameter of an array type, the value of the parameter contains a reference to an array; this reference is passed to the method. Any changes to the array that occur inside the method body will affect the original array that was passed as the argument. 
+
+## indexed variable
+
+
+==
+
+## Re-assigning a different array to an array variable
+
+```java
+// The code can compile and run fine. The second line assigns a new array to list.
+int[] list = new int[5];
+list       = new int[6];
+```
+
+==
+
+## Declaring arrays
+- http://stackoverflow.com/questions/1200621/declare-array-in-java
+
+**For primitive types**
+```java
+int[] myIntArray = new int[3];
+int[] myIntArray = {1,2,3};
+int[] myIntArray = new int[] {1,2,3};
+```
+
+**For classes**
+```java
+String[] myStringArray = new String[3];
+String[] myStringArray = {"a","b","c"};
+String[] myStringArray = new String[] {"a","b","c"};
+```
+
+==
 
 ## Copying arrays
 - The individual elements of the array must be copied into the other array.
 
 ```java
+// Bad example.
 list2 = list1  // NG
 ```
 
@@ -18,9 +55,29 @@ for (int i = 0; i < sourceArray.length; i++) {
 
 ### By the static arraycopy method in the java.lang.System class
 - arraycopy(sourceArray, srcPos, targetArray, tarPos, length);
+- http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#arraycopy(java.lang.Object,%20int,%20java.lang.Object,%20int,%20int)
 
 ```java
 System.arraycopy(sourceArray, 0, targetArray, 0, sourceArray.length);
 ```
 
+
 ### By the clone method to copy arrays
+- TODO
+
+
+==
+
+## Passing Arrays to Methods
+
+```java
+// Invoke the method with an array variable.
+int[] list = { 3, 1, 2, 6, 4, 2 };
+printArray(list);
+```
+
+```java
+// Invoke the method with an anonymous array
+printArray( new int[] { 3, 1, 2, 6, 4, 2 } );
+```
+
