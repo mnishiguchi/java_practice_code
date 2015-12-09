@@ -1,9 +1,7 @@
 package arraydemo;
 
-import java.util.Scanner;
-
 /**
- *
+ * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
  * @author Masatoshi Nishiguchi
  */
 class ArrayDemo {
