@@ -48,6 +48,32 @@ nums = new int[][];   // ILLEGAL - NEEDS 1ST DIMENSION
 // Need NOT specify the second dimension
 nums = new int[5][];  // OK
 nums = new int[5][4]; // OK
+
+// Bad example.
+nums = new int[][]; // NG - Requires the first index to be specified.
+```
+
+**Ragged Arrays**
+- Each row in a two-dimensional array is itself an array. Thus, the rows can have different lengths.
+
+```java
+int[][] triangleArray = {
+    { 1, 2, 3, 4, 5 },
+    { 2, 3, 4, 5 },
+    { 3, 4, 5 },
+    { 4, 5 },
+    { 5 }
+};
+```
+
+```java
+int[][] triangleArray = new int[5][];
+
+triangleArray[0] = new int[5];
+triangleArray[1] = new int[4];
+triangleArray[2] = new int[3];
+triangleArray[3] = new int[2];
+triangleArray[4] = new int[1];
 ```
 
 ==

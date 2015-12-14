@@ -21,3 +21,5 @@ project.properties
 project.xml
 *.properties
 private.xml
+/chap7_programming_exercises/PassTwoDimensionalArray/nbproject/private/
+/chap7_programming_exercises/FindNearestPoints/nbproject/private/
